@@ -1,6 +1,4 @@
-/* especificação de variaveis padrão para cores 
-contribuição : marcoslanzoni@gmail.com*/
-
+/* Root Variables */
 :root {
   --color_container_padrao: #1f598b;
   --color_branco_padrao: white;
@@ -10,7 +8,7 @@ contribuição : marcoslanzoni@gmail.com*/
   --color_texto_black: black;
 }
 
-/* Estilo Geral */
+/* General Styles */
 @font-face {
   font-family: 'Coolvetica';
   src: url(../fonts/coolvetica-rg.ttf);
@@ -28,10 +26,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Estilo Header */
+/* Header Styles */
 header {
   padding-top: 20px;
-  max-width: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -42,9 +39,11 @@ header {
 .container-navg {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 40px;
   max-width: 1100px;
   width: 100%;
+  padding: 0 20px;
 }
 
 .container-navg picture {
@@ -52,23 +51,10 @@ header {
 }
 
 .container-navg img {
-  width: 100%; /* Faz o logo ser responsivo */
-  max-width: 200px; /* Define uma largura máxima para telas grandes */
-  height: auto; /* Mantém a proporção do logo */
-  object-fit: contain; /* Garante que a imagem se encaixe dentro do seu contêiner */
-}
-
-/* Ajustes adicionais para tamanhos de tela menores */
-@media (max-width: 800px) {
-  .container-navg img {
-    max-width: 150px; /* Largura máxima menor para telas médias */
-  }
-}
-
-@media (max-width: 490px) {
-  .container-navg img {
-    max-width: 120px; /* Largura máxima ainda menor para telas pequenas */
-  }
+  width: 100%; /* Tamanho máximo para telas grandes */
+  max-width: 200px; /* Tamanho máximo para telas pequenas */
+  height: auto; /* Manter a proporção da imagem */
+  object-fit: contain; /* Escalar a imagem corretamente */
 }
 
 .navg-menu {
@@ -90,20 +76,24 @@ header {
 .container-navg a:hover {
   background-color: var(--color_container_padrao);
   color: var(--color_branco_padrao);
-  border: none;
-  transition: 0.3s;
 }
 
 .container-banner {
   background-image: url(../assets/auto-mechanic-esmaecido.png);
   background-repeat: no-repeat;
   background-position: right;
+  background-size: contain;
   width: 100%;
   background-color: var(--color_container_padrao);
-  padding: 100px 75px;
+  padding: 100px 20px;
   color: var(--color_branco_padrao);
   display: flex;
   justify-content: center;
+}
+
+.miolo-banner {
+  max-width: 1100px;
+  width: 100%;
 }
 
 .container-banner h1 {
@@ -129,32 +119,24 @@ header {
   background-color: var(--color_backgroud_verde);
   color: var(--color_branco_padrao);
   border-radius: 10px;
-  text-align: center;
+  transition: 0.5s;
 }
 
 .container-banner a:hover {
   background-color: var(--color_backgroud_hover_verde);
-  transition: 0.5s;
 }
 
 .container-banner span {
   color: var(--color_branco_padrao);
   font-size: 15px;
-  background-color: initial;
 }
 
 .container-banner svg {
   margin-left: 15px;
   fill: var(--color_branco_padrao);
-  background-color: initial;
 }
 
-.miolo-banner {
-  max-width: 1100px;
-  width: 100%;
-}
-
-/* Estilo Main */
+/* Main Content Styles */
 main {
   display: flex;
   flex-direction: column;
@@ -162,7 +144,248 @@ main {
 }
 
 .container-conteudo {
+  max-width: 1100px;
+  width: 100%;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+}
+
+/* Baterias Section */
+.baterias {
+  width: 100%;
+  text-align: center;
+}
+
+.baterias h3 {
+  font-size: 32px;
+  color: var(--color_container_padrao);
+  margin-bottom: 30px;
+}
+
+.baterias-img {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  align-items: center;
+}
+
+.baterias-img img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.baterias-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Services Section */
+.services {
+  text-align: center;
+}
+
+.services h3 {
+  font-size: 32px;
+  color: var(--color_container_padrao);
+  margin-bottom: 20px;
+}
+
+.service-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.service-list li {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.orcamento-services {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--color_backgroud_verde);
+  color: var(--color_branco_padrao);
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.orcamento-services:hover {
+  background-color: var(--color_backgroud_hover_verde);
+}
+
+/* Comentarios Section */
+.comentarios {
+  text-align: center;
+}
+
+.comentarios h3 {
+  font-size: 32px;
+  color: var(--color_container_padrao);
+  margin-bottom: 30px;
+}
+
+.container-box-comentarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.box-comentario {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cometario {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.autor-comentario {
+  font-weight: bold;
+  color: var(--color_container_padrao);
+}
+
+/* Location Section */
+.location {
+  text-align: center;
+}
+
+.location h3 {
+  font-size: 32px;
+  color: var(--color_container_padrao);
+  margin-bottom: 30px;
+}
+
+.location iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--color_container_padrao);
+  color: var(--color_branco_padrao);
+  padding: 40px 20px;
+}
+
+.footer-links {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.conteudo-footer {
+  margin-bottom: 20px;
+}
+
+.img-footer {
+  max-width: 200px;
+  height: auto;
+}
+
+.conteudo-footer h4 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.nav-footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom
+  gap: 10px;
+}
+
+.nav-footer a {
+  color: var(--color_branco_padrao);
+  transition: 0.3s;
+}
+
+.nav-footer a:hover {
+  color: var(--color_hover_padrao);
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 15px;
+}
+
+.redes-sociais a {
+  color: var(--color_branco_padrao);
+  transition: 0.3s;
+}
+
+.redes-sociais a:hover {
+  color: var(--color_hover_padrao);
+}
+
+.autor {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dev-creator {
+  color: var(--color_branco_padrao);
+  margin-top: 10px;
+  display: block;
+  transition: 0.3s;
+}
+
+.dev-creator:hover {
+  color: var(--color_hover_padrao);
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+  .navg-menu {
+    display: none;
+  }
+
+  .navg-menu-responsivo {
+    display: block;
+    position: relative;
+  }
+
+  .sub-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 0;
+    min-width: 200px;
+  }
+
+  .sub-menu.hidden {
+    display: none;
+  }
+
+  .sub-menu-item {
+    display: block;
+    padding: 10px 20px;
+  }
+
+  .container-banner h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 490px) {
+  .container-banner {
+    padding: 60px 20px;
+  }
+
+  .container-banner h1 {
+    font-size: 32px;
+  }
+
+  .container-banner h2 {
+    font-size: 18px;
+  }
+}
