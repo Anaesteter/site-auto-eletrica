@@ -51,10 +51,10 @@ header {
 }
 
 .container-navg img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  object-fit: contain;
+  width: 100%; /* Tamanho máximo para telas grandes */
+  max-width: 200px; /* Tamanho máximo para telas pequenas */
+  height: auto; /* Manter a proporção da imagem */
+  object-fit: contain; /* Escalar a imagem corretamente */
 }
 
 .navg-menu {
