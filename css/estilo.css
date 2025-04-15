@@ -1,5 +1,5 @@
 /* especificação de variaveis padrão para cores 
-contribuição : marcoslanzoni@gmail.com*/
+contribuição : marcoslanzoni@gmail.com */
 
 :root {
   --color_container_padrao: #1f598b;
@@ -30,7 +30,7 @@ html {
 
 /* Estilo Header */
 header {
-  padding-top: 20px;
+  padding: 20px 10px 0 10px;
   max-width: 100%;
   width: 100%;
   display: flex;
@@ -52,23 +52,10 @@ header {
 }
 
 .container-navg img {
-  width: 100%; /* Faz o logo ser responsivo */
-  max-width: 200px; /* Define uma largura máxima para telas grandes */
-  height: auto; /* Mantém a proporção do logo */
-  object-fit: contain; /* Garante que a imagem se encaixe dentro do seu contêiner */
-}
-
-/* Ajustes adicionais para tamanhos de tela menores */
-@media (max-width: 800px) {
-  .container-navg img {
-    max-width: 150px; /* Largura máxima menor para telas médias */
-  }
-}
-
-@media (max-width: 490px) {
-  .container-navg img {
-    max-width: 120px; /* Largura máxima ainda menor para telas pequenas */
-  }
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .navg-menu {
@@ -140,29 +127,4 @@ header {
 .container-banner span {
   color: var(--color_branco_padrao);
   font-size: 15px;
-  background-color: initial;
-}
-
-.container-banner svg {
-  margin-left: 15px;
-  fill: var(--color_branco_padrao);
-  background-color: initial;
-}
-
-.miolo-banner {
-  max-width: 1100px;
-  width: 100%;
-}
-
-/* Estilo Main */
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container-conteudo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom
+  background-color: initial
